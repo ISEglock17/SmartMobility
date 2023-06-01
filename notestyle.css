@@ -1,0 +1,331 @@
+﻿@charset "utf-8";
+
+/***********************************************************************
+ * Reset
+ **********************************************************************/
+
+
+/***********************************************************************
+ * Structure
+ **********************************************************************/
+
+html {
+    height: 100%;
+    background-color: #e5e5e5;
+}
+
+
+/***********************************************************************
+ * header
+ **********************************************************************/
+
+
+/***********************************************************************
+ * h1-h6
+ **********************************************************************/
+
+h1 {
+    margin: auto auto 20px;
+    width: 50%;
+    padding: 0.5em;
+    background-repeat: repeat;
+    background-position: center top;
+    background-color: #14da2e;
+    background-image: url("./pattern8.jpg");
+    display: block;
+    border: 10px outset #0000FF;
+    color: #6600FF;
+    font-weight: 700;
+    text-align: center;
+}
+
+h1>span {
+    padding: 2px;
+    background-color: #fdfdfd;
+    font-size: large;
+}
+
+h2 {
+    border-style: dotted solid;
+    border-color: #33cc00;
+    border-width: 2px 1px 2px 8px;
+    padding: 4px 4px 4px 0.5em;
+    font-size: x-large;
+    text-align: left;
+    font-weight: 600;
+    color: #006300;
+    font-style: italic;
+    margin-bottom: 0.6em;
+}
+
+h3 {
+    border-left: 2px solid #bd0cd4;
+    border-bottom: 2px solid #124ac2;
+    padding: 2px 0.5em;
+    margin: 0.5em 0.6em;
+    font-size: normal;
+    text-align: left;
+    font-weight: 500;
+    color: black;
+    margin-top: 1em;
+}
+
+h4 {
+    border-top: 1px dotted #124ac2;
+    border-left: 2px solid #124ac2;
+    border-bottom: 1px dotted #124ac2;
+    padding: 2px 0.5em;
+    margin: 0.5em 0.6em;
+    font-size: normal;
+    text-align: left;
+    font-weight: 500;
+    color: black;
+    margin-top: 1em;
+}
+
+h5 {
+    border: 2px solid #124ac2;
+    padding: 2px 0.5em;
+    margin: 0.5em 2.0em;
+    font-size: normal;
+    text-align: left;
+    font-weight: 500;
+    color: black;
+    margin-top: 1em;
+    width: auto;
+    display: inline-block;
+}
+
+
+/***********************************************************************
+ * main
+ **********************************************************************/
+
+p {
+    margin: 5;
+    text-indent: 1em;
+}
+
+em {
+    color: #124ac2;
+    font-weight: 700;
+}
+
+.document {
+    font-family: 'メイリオ', 'Meiryo', sans-serif;
+    background-color: #FAFAFA;
+    font-size: large;
+    text-align: left;
+    width: 50em;
+    margin: 2em auto;
+    padding: 2.5em;
+    line-height: 150%;
+    border-left: solid 1px #dddddd;
+    border-top: solid 1px #dddddd;
+    border-right: solid 3px #aaaaaa;
+    border-bottom: solid 3px #aaaaaa;
+    font-weight: normal;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.text {
+    margin-left: 1.5em;
+    width: 95%;
+}
+
+.caption {
+    width: 33%;
+}
+
+.line {
+    border-style: solid;
+    padding: 10px;
+    margin: 15px;
+    border-color: #00a5de;
+    margin-top: 0.8em;
+}
+
+.h3p {
+    margin-left: 1em;
+}
+
+
+/***********************************************************************
+ * def th
+ **********************************************************************/
+
+.def {
+    position: relative;
+    padding: 1em 0.5em;
+    margin: 1em 1em 2em 1em;
+    font-weight: normal;
+    border: solid 2px #000000;
+    border-right: solid 4px #000000;
+    border-bottom: solid 4px #000000;
+    width: auto;
+}
+
+.def>p {
+    margin-left: 1em;
+    text-indent: 1em;
+}
+
+.def-t {
+    position: absolute;
+    display: inline-block;
+    top: -27px;
+    left: -3px;
+    background-color: #FAFAFA;
+    padding: 0 0.5em;
+    margin: 1em 2em;
+    font-weight: normal;
+    border: solid 2px #000000;
+    border-right: solid 4px #000000;
+    border-bottom: solid 4px #000000;
+    width: auto;
+}
+
+.th {
+    position: relative;
+    padding: 1em 0.5em;
+    margin: 1em;
+    font-weight: normal;
+    border: solid 2px #6091d3;
+    border-radius: 10px;
+    width: auto;
+}
+
+.th>p {
+    margin-left: 1em;
+    text-indent: 1em;
+}
+
+.th-t {
+    position: absolute;
+    display: inline-block;
+    top: -27px;
+    left: -3px;
+    background-color: #FAFAFA;
+    padding: 0 0.5em;
+    margin: 1em 2em;
+    font-weight: normal;
+    border: solid 2px #6091d3;
+    border-radius: 10px;
+    width: auto;
+}
+
+.ans {
+    position: relative;
+    padding: 1em 0.5em;
+    margin: 1em 1em 3em 1em;
+    font-weight: normal;
+    border: solid 2px #006400;
+    border-radius: 10px;
+    width: auto;
+}
+
+.ans>p {
+    margin-left: 1em;
+    text-indent: 1em;
+}
+
+.ans-t {
+    position: absolute;
+    display: inline-block;
+    top: -27px;
+    left: -3px;
+    background-color: #FAFAFA;
+    padding: 0 0.5em;
+    margin: 1em 2em;
+    font-weight: normal;
+    border: solid 2px #006400;
+    border-radius: 10px;
+    width: auto;
+}
+
+.def h4 {
+    color: black;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-style: none;
+}
+
+.th-t>h5 {
+    color: black;
+    margin: 0;
+    padding: 0;
+    border-style: none;
+}
+
+.ans-t>h5 {
+    color: black;
+    margin: 0;
+    padding: 0;
+    border-style: none;
+}
+
+
+/***********************************************************************
+ * table
+ **********************************************************************/
+
+table,
+td,
+th {
+    border: 1px solid #595959;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    padding: 3px;
+    width: 30px;
+    height: 25px;
+    text-align: center;
+}
+
+th {
+    background: #f0e6cc;
+}
+
+.even {
+    background: #fbf8f0;
+}
+
+.odd {
+    background: #fefcf9;
+}
+
+
+/***********************************************************************
+ * maru kakomi
+ **********************************************************************/
+
+.maru {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    flex-flow: column;
+    vertical-align: top;
+}
+
+.size_normal {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.letter {
+    font-size: noemal;
+    line-height: 1.0em;
+}
+
+.circle {
+    color: black;
+    border: 1px solid black;
+}

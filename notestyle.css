@@ -283,7 +283,6 @@ em {
 /***********************************************************************
  * table
  **********************************************************************/
-
 table,
 td,
 th {
@@ -294,7 +293,7 @@ th {
 td,
 th {
     padding: 3px;
-    width: 30px;
+    /*width: 30px;*/
     height: 25px;
     text-align: center;
 }
@@ -330,6 +329,90 @@ th {
     background: #fefcf9;
 }
 
+#jousha-ippan{
+    overflow-x: scroll;
+    width: auto;
+}
+
+#jousha-ippan td{
+    width: auto;
+}
+
+#jousha-ippan table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px; /* Adjust the margin as needed */
+    white-space: nowrap;
+    border-collapse: collapse
+  }
+  
+  
+  /* Style for table header cells */
+  #jousha-ippan th {
+    background-color: #f2f2f2;
+    width: 80px; /* Adjust the width of header cells as needed */
+  }
+  
+  /* Style for table cells */
+  #jousha-ippan td, #jousha-ippan th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    width: 30px; /* Adjust the width of cells as needed */
+  }
+  
+  /* Style for odd rows */
+  #jousha-ippan tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Style for hover effect on rows */
+  #jousha-ippan tr:hover {
+    background-color: #e6e6e6;
+  }
+
+  
+#jousha-hikaiin{
+    overflow-x: scroll;
+    width: auto;
+}
+
+#jousha-hikaiin td{
+    width: auto;
+}
+
+#jousha-hikaiin table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px; /* Adjust the margin as needed */
+    white-space: nowrap;
+    border-collapse: collapse
+  }
+  
+  
+  /* Style for table header cells */
+  #jousha-hikaiin th {
+    background-color: #f2f2f2;
+    width: 80px; /* Adjust the width of header cells as needed */
+  }
+  
+  /* Style for table cells */
+  #jousha-hikaiin td, #jousha-hikaiin th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    width: 30px; /* Adjust the width of cells as needed */
+  }
+  
+  /* Style for odd rows */
+  #jousha-hikaiin tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Style for hover effect on rows */
+  #jousha-hikaiin tr:hover {
+    background-color: #e6e6e6;
+  }
 
 /***********************************************************************
  * maru kakomi

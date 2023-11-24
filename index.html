@@ -233,49 +233,7 @@
         ※予約された時間を超えて使用した場合は，15分ごとに300円の追加料金が発生する。
         </p>
         -->
-        <h3>乗車賃(乗り捨て，延滞なしの場合)</h3>
-        <p>乗車賃は基本料金に対して，利用時間帯に応じた賃率を加算した累積額となる。また，乗り捨て時や延滞時には別途追加乗車賃がかかるようにしている。</p>
-        <p>基本料金を$\;a[円]\;$，賃率を$\;r(t)[円/h]\;$，時間を$\;t[h]\;$，時間料金を$\;f(t)[円]\;$，対キロ賃率を$\;f_x[円/\mathrm{km}]\;$，走行距離を$\;x[\mathrm{km}]\;$とする。</p>
-        <p>対キロ賃率$\;f_x\;$は，
-          $$f_x = \begin{cases} 12 &(一般会員) \\ 15 &(非会員)\end{cases}$$
-        </p>
-        <p>一般会員における賃率$\;r_{\mathrm{member}}(t)\;$は，
-          $$r_{\mathrm{member}}(t) = \begin{cases} 250  &(0\lt t \leq 1) \\500 &(1\lt t \leq 3) \\ 1000 &(3\lt t \leq 6) \\ 1500 &(6\lt t \leq 10)\\ 2000 &(10\lt t )\end{cases}$$
-        </p>
-        <p>非会員における賃率$\;r_{\mathrm{non-member}}(t)\;$は，
-          <p>$$r_{\mathrm{non-member}}(t) = \begin{cases} 400  &(0\lt t \leq 1) \\800 &(1\lt t \leq 3) \\ 1300 &(3\lt t \leq 6) \\ 1800 &(6\lt t \leq 10)\\ 2400 &(10\lt t )\end{cases}$$</p>
-        </p>
-        <p>時間料金$\;f(t)\;$は，
-          $$f(t) = \begin{cases} \displaystyle a + 0.25r(t) \left\lfloor \frac{t}{0.25} \right\rfloor  &(0\lt t \leq 1) \\ f(1) + 0.5r(t) \left\lfloor \cfrac{t-1}{0.5} \right\rfloor &(1\lt t \leq 3) \\ f(3) + \displaystyle \sum_{s = 3}^{\left\lfloor t-3 \right\rfloor} r(s)  &(3\lt t \leq 12) \\f(12) +  4r(t)\left\lfloor \cfrac{t-12}{4} \right\rfloor &(12\lt t) \end{cases}$$
-        </p>
-        <p>このとき，乗車賃$\;y(t)\;$は乗り捨て，延滞がない場合，時間料金は1の位で四捨五入して，
-          $$y(t) =  10 \left\lfloor \frac{f(t)}{10} + \frac{1}{2} \right\rfloor + f_x\, x$$
-          と表せる。
-        </p>
-
-        <h3>乗車賃(延滞，乗り捨てがある場合)</h3>
-        <p>乗り捨て料$\;f_d[円]\;$は，
-          $$f_d = \begin{cases} 350 &(一般会員) \\ 500 &(非会員)\end{cases}$$
-          と設定する。
-        </p>
-        <p>なお，乗り捨てせず，ステーションに戻した場合には，乗り捨て料を取らない。</p>
-        <p>延滞料$\;d[円]\;$は，延滞開始時の利用時間を$\;t'[h]\;$として，賃率をそれぞれ約1.5倍した延滞時賃率$\;r'(t)\;$を用いて計算する。</p>
-        <p>乗車賃は，延滞開始時の利用時間までで普通時間料金での計算を打ち切り，延滞時間突入後は，延滞時賃率を適用したうえで，算出した延滞時間料金を普通時間料金の打ち切り時点での額に加算して計算する。</p>
-        <p>一般会員における遅延時賃率$\;r'_{\mathrm{member}}(t)\;$は，
-          $$r'_{\mathrm{member}}(t) = \begin{cases} 750 &(0\lt t \leq 3) \\ 1500 &(3\lt t \leq 6) \\ 2250 &(6\lt t \leq 10)\\ 3000 &(10\lt t )\end{cases}$$
-        </p>
-        <p>非会員における遅延時賃率$\;r'_{\mathrm{non-member}}(t)\;$は，
-          $$r'_{\mathrm{non-member}}(t) = \begin{cases} 600 &(0\lt t \leq 3) \\ 1950 &(3\lt t \leq 6) \\ 2700 &(6\lt t \leq 10)\\ 3600 &(10\lt t )\end{cases}$$
-        </p>
-        <p>
-          $$d(t) = \begin{cases} \displaystyle 0.25r'(t) \left\lfloor \frac{t}{0.25} \right\rfloor  &(0\lt t \leq 1) \\ f(1) + 0.5r'(t) \left\lfloor \cfrac{t-1}{0.5} \right\rfloor &(1\lt t \leq 3) \\ f(3) + \displaystyle \sum_{s = 3}^{\left\lfloor t-3 \right\rfloor} r'(s)  &(3\lt t \leq 12) \\f(12) +  4r'(t)\left\lfloor \cfrac{t-12}{4} \right\rfloor &(12\lt t) \end{cases}$$
-        </p>
-        <p>このとき，乗車賃$\;y(t)\;$は延滞ありの場合，時間料金は1の位で四捨五入して，
-          $$y(t) =  10 \left\lfloor \frac{f(t')}{10} + \frac{1}{2} \right\rfloor + d(t)- d(t') + f_x \,x + f_d$$
-          と表せる。
-        </p>
-        <p>補足としては，遅延時賃率の設定においては，$\;(0\lt t \leq 1)\;$の範囲における賃率は普通時間賃率だと特別価格で安く設定しているため，普通時間賃率で$\;(1\lt t \leq 3)\;$の賃率を1.5倍した額から設定した。</p>
-
+        
         <h3>一般会員料金一覧</h3>
         <div id="jousha-ippan">
         <table>
@@ -1693,8 +1651,57 @@
         </table>
       </div>
 
+        <h3>乗車賃(乗り捨て，延滞なしの場合)</h3>
+        <p>乗車賃は基本料金に対して，利用時間帯に応じた賃率を加算した累積額となる。また，乗り捨て時や延滞時には別途追加乗車賃がかかるようにしている。</p>
+        <p>基本料金を$\;a[円]\;$，賃率を$\;r(t)[円/h]\;$，時間を$\;t[h]\;$，時間料金を$\;f(t)[円]\;$，対キロ賃率を$\;f_x[円/\mathrm{km}]\;$，走行距離を$\;x[\mathrm{km}]\;$とする。</p>
+        <p>対キロ賃率$\;f_x\;$は，
+          $$f_x = \begin{cases} 12 &(一般会員) \\ 15 &(非会員)\end{cases}$$
+        </p>
+        <p>一般会員における賃率$\;r_{\mathrm{member}}(t)\;$は，
+          $$r_{\mathrm{member}}(t) = \begin{cases} 250  &(0\lt t \leq 1) \\500 &(1\lt t \leq 3) \\ 1000 &(3\lt t \leq 6) \\ 1500 &(6\lt t \leq 10)\\ 2000 &(10\lt t )\end{cases}$$
+        </p>
+        <p>非会員における賃率$\;r_{\mathrm{non-member}}(t)\;$は，
+          <p>$$r_{\mathrm{non-member}}(t) = \begin{cases} 400  &(0\lt t \leq 1) \\800 &(1\lt t \leq 3) \\ 1300 &(3\lt t \leq 6) \\ 1800 &(6\lt t \leq 10)\\ 2400 &(10\lt t )\end{cases}$$</p>
+        </p>
+        <p>時間料金$\;f(t)\;$は，
+          $$f(t) = \begin{cases} \displaystyle a + 0.25r(t) \left\lfloor \frac{t}{0.25} \right\rfloor  &(0\lt t \leq 1) \\ f(1) + 0.5r(t) \left\lfloor \cfrac{t-1}{0.5} \right\rfloor &(1\lt t \leq 3) \\ f(3) + \displaystyle \sum_{s = 3}^{\left\lfloor t-3 \right\rfloor} r(s)  &(3\lt t \leq 12) \\f(12) +  4r(t)\left\lfloor \cfrac{t-12}{4} \right\rfloor &(12\lt t) \end{cases}$$
+        </p>
+        <p>このとき，乗車賃$\;y(t)\;$は乗り捨て，延滞がない場合，時間料金は1の位で四捨五入して，
+          $$y(t) =  10 \left\lfloor \frac{f(t)}{10} + \frac{1}{2} \right\rfloor + f_x\, x$$
+          と表せる。
+        </p>
+
+        <h3>乗車賃(延滞，乗り捨てがある場合)</h3>
+        <p>乗り捨て料$\;f_d[円]\;$は，
+          $$f_d = \begin{cases} 350 &(一般会員) \\ 500 &(非会員)\end{cases}$$
+          と設定する。
+        </p>
+        <p>なお，乗り捨てせず，ステーションに戻した場合には，乗り捨て料を取らない。</p>
+        <p>延滞料$\;d[円]\;$は，延滞開始時の利用時間を$\;t'[h]\;$として，賃率をそれぞれ約1.5倍した延滞時賃率$\;r'(t)\;$を用いて計算する。</p>
+        <p>乗車賃は，延滞開始時の利用時間までで普通時間料金での計算を打ち切り，延滞時間突入後は，延滞時賃率を適用したうえで，算出した延滞時間料金を普通時間料金の打ち切り時点での額に加算して計算する。</p>
+        <p>一般会員における遅延時賃率$\;r'_{\mathrm{member}}(t)\;$は，
+          $$r'_{\mathrm{member}}(t) = \begin{cases} 750 &(0\lt t \leq 3) \\ 1500 &(3\lt t \leq 6) \\ 2250 &(6\lt t \leq 10)\\ 3000 &(10\lt t )\end{cases}$$
+        </p>
+        <p>非会員における遅延時賃率$\;r'_{\mathrm{non-member}}(t)\;$は，
+          $$r'_{\mathrm{non-member}}(t) = \begin{cases} 600 &(0\lt t \leq 3) \\ 1950 &(3\lt t \leq 6) \\ 2700 &(6\lt t \leq 10)\\ 3600 &(10\lt t )\end{cases}$$
+        </p>
+        <p>
+          $$d(t) = \begin{cases} \displaystyle 0.25r'(t) \left\lfloor \frac{t}{0.25} \right\rfloor  &(0\lt t \leq 1) \\ f(1) + 0.5r'(t) \left\lfloor \cfrac{t-1}{0.5} \right\rfloor &(1\lt t \leq 3) \\ f(3) + \displaystyle \sum_{s = 3}^{\left\lfloor t-3 \right\rfloor} r'(s)  &(3\lt t \leq 12) \\f(12) +  4r'(t)\left\lfloor \cfrac{t-12}{4} \right\rfloor &(12\lt t) \end{cases}$$
+        </p>
+        <p>このとき，乗車賃$\;y(t)\;$は延滞ありの場合，時間料金は1の位で四捨五入して，
+          $$y(t) =  10 \left\lfloor \frac{f(t')}{10} + \frac{1}{2} \right\rfloor + d(t)- d(t') + f_x \,x + f_d$$
+          と表せる。
+        </p>
+        <p>補足としては，遅延時賃率の設定においては，$\;(0\lt t \leq 1)\;$の範囲における賃率は普通時間賃率だと特別価格で安く設定しているため，普通時間賃率で$\;(1\lt t \leq 3)\;$の賃率を1.5倍した額から設定した。</p>
+
+
       <h3>利用料金設定理由</h3>
-      <p></p>
+      <p>料金計算については，JRの運賃計算を参考に基本料金に対して一定時間刻みで乗車賃を設定するようにした。また，JRなど一般的な交通機関とは違って，本サービスでは短時間での利用を促進するため，長時間逓増型での乗車賃設定とした。そのため，1,3,6,10時間ごとに賃率を上げるようにしている。</p>
+      <p>また，距離料金については，下記に記載の通り，車のメンテナンスやEV車の燃料代をもとに設定した。</p>
+      <p>いずれの料金においても一般会員より非会員料金の方が乗車賃を高く設定しているが，これは一般会員から基本的に車の購入費，維持費を徴収するのに対して，非会員では乗車賃を高く設定することでそれを車購入費に充当したり，収入を上げる意図がある。基本的には非会員は観光客など日頃から長野市において本サービスを利用している方ではなく，一時的に利用することを見越しているため，タクシーやバスなどとは違った強みをもとに多くのお金を落としてくれることを期待している。その期待による料金設定となっている。</p>
+      <p style="text-align: right;">参考資料: <a href="http://www.desktoptetsu.com/unchinkeisan.htm#tab1">JRの運賃計算ルールは複雑すぎる</a></p>
+      
+
 
       <h2>カーシェアにおける諸費用</h2>
       <h3>車に関する費用</h3>
